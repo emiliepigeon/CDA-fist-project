@@ -36,7 +36,6 @@ def lance_des():
             return print("Le résultat du lancé est de : " + str(resultat) + "pour un dé à " + str(faces) + " faces")
             # Retourne le résultat final du lancer
 
-
 ###################################################################################################
 import random  # Importation du module random pour générer des nombres aléatoires
 
@@ -82,7 +81,6 @@ def juste_prix():
         if rejouer != 'o':  # Si l'utilisateur ne veut pas rejouer
             continuer = False  # Change la variable pour sortir de la boucle
 
-
 ###########################################################################################################
 # Fonctionnalité 4 : Horloge numérique => menu.py choix 4
 import time  # Importation du module time pour accéder à l'heure système
@@ -122,8 +120,16 @@ import random  # Importation du module random pour choisir un mot aléatoire
 def trouve_mot():
     """Cette fonction simule un jeu du pendu avec un mot à deviner."""
     
-    # Dictionnaire de mots à deviner
-    mots = ["TULIPE", "CHAT", "SUPERFETATOIRE", "LICORNE", "IDIOT"]
+    # Dictionnaire de mots à deviner (sans caractères spéciaux ni accents)
+    mots = ["CHAT", "BANANE", "SUPERFETATOIRE", "LICORNE", "CON"]
+    
+    # Affiche les règles du jeu
+    print("Bienvenue au jeu du Pendu !")
+    print("Règles du jeu :")
+    print("1. Vous devez deviner le mot en proposant des lettres.")
+    print("2. Vous avez 5 chances pour vous tromper.")
+    print("3. Les mots ne contiennent que des lettres MAJUSCULES.")
+    print("4. Les caractères spéciaux et les accents ne sont pas utilisés.")
     
     # Choisir un mot aléatoire dans le dictionnaire
     mot_a_trouver = random.choice(mots)  # Mot à deviner
@@ -131,8 +137,7 @@ def trouve_mot():
     essais_restants = 5  # Nombre d'essais restants
     essais_faibles = []  # Liste pour stocker les lettres déjà essayées
 
-    print("Bienvenue au jeu du Pendu !")  # Message d'accueil
-    print("Le mot à deviner a", len(mot_a_trouver), "lettres.")  # Indique le nombre de lettres
+    print("\nLe mot à deviner a", len(mot_a_trouver), "lettres.")  # Indique le nombre de lettres
 
     while essais_restants > 0:  # Tant que le joueur a des essais restants
         print("Mot à deviner :", " ".join(lettres_trouvees))  # Affiche le mot avec des tirets
@@ -174,8 +179,6 @@ def trouve_mot():
         trouve_mot()  # Relance une nouvelle partie
     else:
         print("Retour au menu...")  # Message indiquant qu'on retourne au menu
-
-
 
 ###########################################################################################################
 # Fonctionnalité 6 : Code césar => menu.py choix 6
