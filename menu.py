@@ -1,6 +1,6 @@
 # menu.py
 
-# import fonctions  # J'importe le fichier fonctions.py pour utiliser ses fonctions
+from fonctions import calcul_remise  # J'importe le fichier fonctions.py pour utiliser ses fonctions
 
 def afficher_menu():
 # J'utilise des print pour afficher chaque ligne de mon menu
@@ -46,7 +46,7 @@ while choix != "0":
         case _:
             print("Option non valide. Veuillez choisir une option du menu.")  # Message d'erreur si le choix n'est pas valide
     
-    choix = affiche_menu()  # Redemande à l'utilisateur son choix
+    choix = afficher_menu()  # Redemande à l'utilisateur son choix
 
 # Quand l'utilisateur choisit de quitter (choix "0"), j'affiche un message de fin
 print("*** FIN DU PROGRAMME ***")
