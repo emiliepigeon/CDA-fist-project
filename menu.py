@@ -1,6 +1,6 @@
 # menu.py
 
-from fonctions import calcul_remise, lance_des, juste_prix, horloge_numérique, code_cesar  
+from fonctions import calcul_remise, lance_des, juste_prix, horloge_numérique, trouve_mot, code_cesar  
 # J'importe le fichier fonctions.py pour utiliser ses fonctions
 
 def afficher_menu():
@@ -41,7 +41,8 @@ while choix != "0":
         case "4":
             horloge_numérique()
             # J'appelle la fonction pour afficher l'horloge numérique       
-        # case "5":
+        case "5":
+            trouve_mot()
             # J'appelle la fonction pour jouer au pendu 
         case "6":
             code_cesar()

@@ -117,6 +117,65 @@ def horloge_numérique():
 
 ###########################################################################################################
 # Fonctionnalité 5 : Jeu du pendu => menu.py choix 5
+import random  # Importation du module random pour choisir un mot aléatoire
+
+def trouve_mot():
+    """Cette fonction simule un jeu du pendu avec un mot à deviner."""
+    
+    # Dictionnaire de mots à deviner
+    mots = ["TULIPE", "CHAT", "SUPERFETATOIRE", "LICORNE", "IDIOT"]
+    
+    # Choisir un mot aléatoire dans le dictionnaire
+    mot_a_trouver = random.choice(mots)  # Mot à deviner
+    lettres_trouvees = ["_"] * len(mot_a_trouver)  # Liste pour afficher les lettres trouvées
+    essais_restants = 5  # Nombre d'essais restants
+    essais_faibles = []  # Liste pour stocker les lettres déjà essayées
+
+    print("Bienvenue au jeu du Pendu !")  # Message d'accueil
+    print("Le mot à deviner a", len(mot_a_trouver), "lettres.")  # Indique le nombre de lettres
+
+    while essais_restants > 0:  # Tant que le joueur a des essais restants
+        print("Mot à deviner :", " ".join(lettres_trouvees))  # Affiche le mot avec des tirets
+        print("Essais restants :", essais_restants)  # Affiche le nombre d'essais restants
+        print("Lettres déjà essayées :", " ".join(essais_faibles))  # Affiche les lettres déjà essayées
+
+        # Demande à l'utilisateur de deviner une lettre
+        lettre = input("Devinez une lettre : ").upper()  # Convertit la lettre en majuscule
+
+        if len(lettre) != 1 or not lettre.isalpha():  # Vérifie que l'entrée est valide
+            print("Veuillez entrer une seule lettre.")  # Message d'erreur
+            continue
+        
+        if lettre in essais_faibles:  # Vérifie si la lettre a déjà été essayée
+            print("Vous avez déjà essayé cette lettre.")  # Message d'erreur
+            continue
+        
+        essais_faibles.append(lettre)  # Ajoute la lettre aux essais faibles
+
+        if lettre in mot_a_trouver:  # Si la lettre est dans le mot à trouver
+            print("Bien joué ! La lettre", lettre, "est dans le mot.")
+            for index, char in enumerate(mot_a_trouver):  # Parcourt chaque caractère du mot
+                if char == lettre:  # Si la lettre correspond au caractère du mot
+                    lettres_trouvees[index] = lettre  # Remplace le tiret par la lettre trouvée
+            
+            if "_" not in lettres_trouvees:  # Vérifie si toutes les lettres ont été trouvées
+                print("Félicitations ! Vous avez trouvé le mot :", mot_a_trouver)
+                break  # Sort de la boucle si le mot est trouvé
+        else:
+            essais_restants -= 1  # Diminue le nombre d'essais restants
+            print("Désolé, la lettre", lettre, "n'est pas dans le mot. Vous perdez une chance.")
+
+    if essais_restants == 0:  # Si le joueur n'a plus d'essais restants
+        print("Vous avez perdu ! Le mot était :", mot_a_trouver)  # Message de perte
+    
+    # Demande à l'utilisateur s'il veut recommencer
+    rejouer = input("Voulez-vous recommencer ? (o/n) : ").lower()  
+    if rejouer == 'o':  
+        trouve_mot()  # Relance une nouvelle partie
+    else:
+        print("Retour au menu...")  # Message indiquant qu'on retourne au menu
+
+
 
 ###########################################################################################################
 # Fonctionnalité 6 : Code césar => menu.py choix 6
@@ -152,9 +211,6 @@ def code_cesar():
 
     # Affiche le résultat final
     print(f"Le mot codé est : {mot_code}")  # Affiche le mot codé
-
-
-
 
 ###########################################################################################################
 # Fonctionnalité 7 : Gestionnaire de contacts => menu.py choix 7
