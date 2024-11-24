@@ -40,3 +40,48 @@ def lance_des():
 # dernier_resultat = lance_des()
 # print(f"Le dernier résultat du dé était : {dernier_resultat}")
 
+###################################################################################################
+# Fonctionnalité 3 : Trouver le juste prix => menu.py choix 3
+
+import random  # Importation du module random pour générer des nombres aléatoires
+
+def juste_prix():
+    """Cette fonction permet à l'utilisateur de deviner un prix entre 1 et 100 euros."""
+    
+    continuer = True  # Variable pour contrôler si le jeu continue
+    
+    while continuer:  # Boucle tant que continuer est vrai
+        juste_prix = random.randint(1, 100)  # Générer un juste prix aléatoire
+        essais = 0  # Compteur d'essais
+        max_essais = 5  # Nombre maximum d'essais autorisés
+        
+        print("Bienvenue au jeu du juste prix !")  # Message d'accueil
+        print("Devinez le prix entre 1 et 100 euros.")  # Instructions
+        
+        while essais < max_essais:  # Boucle pour les essais
+            proposition = int(input("Entrez votre proposition : "))  # Demande à l'utilisateur
+            
+            if proposition < 1 or proposition > 100:  # Vérifie la validité de la proposition
+                print("Veuillez entrer un nombre entre 1 et 100.")  # Message d'erreur
+                continue
+            
+            essais += 1  # Incrémente le compteur d'essais
+            
+            if proposition == juste_prix:  # Vérifie si la proposition est correcte
+                message = "Vous avez trouvé le juste prix !!!"  # Message de succès
+                print(message)  # Affiche le message de succès
+                return message, juste_prix  # Retourne le message et le juste prix
+            
+            print("Ce n'est pas le bon prix. Essayez encore.")  # Indique que la proposition est incorrecte
+        
+        if essais == max_essais:  # Si l'utilisateur a épuisé ses essais
+            message = f"Vous avez perdu ! Le juste prix était : {juste_prix}"  # Message de perte
+            print(message)  # Affiche le message de perte
+            return message, juste_prix  # Retourne le message et le juste prix
+        
+        rejouer = input("Voulez-vous rejouer ? (o/n) : ").lower()  # Demande à l'utilisateur s'il veut rejouer
+        if rejouer != 'o':  # Si l'utilisateur ne veut pas rejouer
+            continuer = False  # Change la variable pour sortir de la boucle
+
+resultat, prix = juste_prix()
+print(f"Résultat du jeu : {resultat} (Juste prix : {prix})" + str(resultat) + " €")

@@ -1,6 +1,7 @@
 # menu.py
 
-from fonctions import calcul_remise, lance_des  # J'importe le fichier fonctions.py pour utiliser ses fonctions
+from fonctions import calcul_remise, lance_des, juste_prix  
+# J'importe le fichier fonctions.py pour utiliser ses fonctions
 
 def afficher_menu():
 # J'utilise des print pour afficher chaque ligne de mon menu
@@ -34,7 +35,8 @@ while choix != "0":
         case "2":
             lance_des()
             # J'appelle la fonction pour lancer un dé       
-        # case "3":
+        case "3":
+            juste_prix()
             # J'appelle la fonction pour jouer au juste prix       
         # case "4":
             # J'appelle la fonction pour afficher l'horloge numérique       
