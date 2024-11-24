@@ -115,15 +115,46 @@ def horloge_numérique():
         else:
             print("Choix invalide. Veuillez entrer 'o' pour oui ou 'n' pour non.")  # Gestion des entrées invalides
 
-
-
-###########################################################################################################
-
 ###########################################################################################################
 # Fonctionnalité 5 : Jeu du pendu => menu.py choix 5
 
 ###########################################################################################################
 # Fonctionnalité 6 : Code césar => menu.py choix 6
+def code_cesar():
+    """Cette fonction permet de coder un mot en utilisant le chiffrement de César avec des lettres majuscules uniquement."""
+    
+    # Demande à l'utilisateur d'entrer le mot à coder
+    mot = input("Entrez le mot à coder (uniquement des majuscules) : ")  # Mot à coder
+    
+    # Vérifie si le mot contient uniquement des majuscules
+    if not mot.isupper():  # Si le mot n'est pas en majuscules
+        print("Erreur : Veuillez entrer uniquement des lettres MAJUSCULES.")  # Message d'erreur
+        return  # Quitte la fonction si l'entrée est invalide
+
+    # Demande à l'utilisateur d'entrer le décalage
+    decalage = int(input("Entrez le décalage (nombre entier) : "))  # Décalage pour le chiffrement
+
+    mot_code = ""  # Variable pour stocker le mot codé
+
+    # Parcourt chaque caractère du mot
+    for char in mot:
+        # Vérifie si le caractère est une lettre majuscule
+        if char.isalpha():  # Si c'est une lettre
+            # Calcule le décalage pour les lettres majuscules
+            base = ord('A')  # Base pour les majuscules
+            
+            # Applique le décalage et s'assure que cela reste dans l'alphabet
+            char_code = chr((ord(char) - base + decalage) % 26 + base)  # Caractère codé
+            mot_code += char_code  # Ajoute le caractère codé au mot codé
+        else:
+            # En théorie, ce cas ne devrait pas se produire car on vérifie les majuscules au début
+            mot_code += char  # Ajoute le caractère tel quel (non utilisé ici)
+
+    # Affiche le résultat final
+    print(f"Le mot codé est : {mot_code}")  # Affiche le mot codé
+
+
+
 
 ###########################################################################################################
 # Fonctionnalité 7 : Gestionnaire de contacts => menu.py choix 7
