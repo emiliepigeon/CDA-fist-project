@@ -1,6 +1,6 @@
 # menu.py
 
-from fonctions import calcul_remise  # J'importe le fichier fonctions.py pour utiliser ses fonctions
+from fonctions import calcul_remise, lance_des  # J'importe le fichier fonctions.py pour utiliser ses fonctions
 
 def afficher_menu():
 # J'utilise des print pour afficher chaque ligne de mon menu
@@ -31,7 +31,8 @@ while choix != "0":
             montant = int(input("Montant : "))  # Je demande le montant à l'utilisateur
             remise = int(input("La remise : "))  # Je demande le pourcentage de remise
             calcul_remise(montant, remise)  # J'appelle la fonction pour calculer la remise
-        # case "2":
+        case "2":
+            lance_des()
             # J'appelle la fonction pour lancer un dé       
         # case "3":
             # J'appelle la fonction pour jouer au juste prix       
