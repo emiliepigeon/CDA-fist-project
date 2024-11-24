@@ -1,0 +1,14 @@
+STRUCTURE
+mon_projet/
+│
+├── app.py
+└── programmes/
+    ├── menu.py
+    ├── calcul_remise.py
+    ├── lance_des.py
+    ├── juste_prix.py
+    ├── horloge_numerique.py
+    ├── trouve_mot.py
+    ├── code_cesar.py
+    ├── gc.py
+    └── calculatrice.py
