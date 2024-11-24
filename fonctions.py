@@ -217,7 +217,55 @@ def code_cesar():
 
 ###########################################################################################################
 # Fonctionnalité 7 : Gestionnaire de contacts => menu.py choix 7
+def gc():
+    """Cette fonction gère un répertoire de contacts."""
+    
+    # Dictionnaire pour stocker les contacts
+    contacts = {}  # Clé : nom, Valeur : [numéro de téléphone, email]
 
+    continuer = True  # Variable pour contrôler la boucle
+
+    while continuer:  # Boucle principale pour permettre à l'utilisateur d'ajouter des contacts
+        # Affichage du menu des opérations
+        print("\n=== Gestionnaire de Contacts ===")  # Affiche le titre du gestionnaire
+        print("1. Ajouter un contact")  # Option pour ajouter un contact
+        print("2. Afficher tous les contacts")  # Option pour afficher tous les contacts
+        print("3. Quitter")  # Option pour quitter le programme
+
+        # Demande à l'utilisateur de choisir une option
+        choix = input("Choisissez une option (1-3) : ")
+
+        if choix == '1':  # Si l'utilisateur choisit d'ajouter un contact
+            nom = input("Entrez le nom du contact : ")  # Demande le nom du contact
+
+            # Demande le numéro de téléphone portable
+            tel = input("Entrez le numéro de téléphone portable : ")  
+            # Demande l'email
+            email = input("Entrez l'email : ")  
+
+            # Ajoute le contact au dictionnaire
+            contacts[nom] = [tel, email]  # Stocke le numéro et l'email dans une liste
+
+            print(f"Contact '{nom}' ajouté avec succès.")  # Confirmation d'ajout
+
+        elif choix == '2':  # Si l'utilisateur choisit d'afficher les contacts
+            if not contacts:  # Vérifie si le dictionnaire est vide
+                print("Aucun contact à afficher.")  # Message si aucun contact n'est présent
+            else:
+                print("\nListe des Contacts :")  # Titre pour la liste des contacts
+                for nom, infos in contacts.items():  # Parcourt chaque contact dans le dictionnaire
+                    tel, email = infos  # Récupère le numéro et l'email
+                    print(f"Nom : {nom}")  # Affiche le nom du contact
+                    print(f"Téléphone : {tel}")  # Affiche le numéro de téléphone
+                    print(f"Email : {email}")  # Affiche l'email
+                    print("--------------------")  # Ligne de séparation entre les contacts
+
+        elif choix == '3':  # Si l'utilisateur choisit de quitter
+            print("Merci d'avoir utilisé le gestionnaire de contacts.")  # Message de remerciement
+            continuer = False  # Change la variable pour sortir de la boucle
+
+        else:  # Si l'entrée n'est pas valide
+            print("Choix invalide. Veuillez entrer un nombre entre 1 et 3.")  # Message d'erreur
 
 ###########################################################################################################
 # Fonctionnalité 8 : Baccalauréat / morpion / calculatrice simple => menu.py choix 8

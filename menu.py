@@ -1,6 +1,6 @@
 # menu.py
 
-from fonctions import calcul_remise, lance_des, juste_prix, horloge_numérique, trouve_mot, code_cesar, calculatrice  
+from fonctions import calcul_remise, lance_des, juste_prix, horloge_numérique, trouve_mot, code_cesar, gc, calculatrice  
 # J'importe le fichier fonctions.py pour utiliser ses fonctions
 
 def afficher_menu():
@@ -47,7 +47,8 @@ while choix != "0":
         case "6":
             code_cesar()
             # J'appelle la fonction pour utiliser le code César
-        # case "7":
+        case "7":
+            gc()
             # Appel au gestionnaire de contacts
         case "8":
             calculatrice()
