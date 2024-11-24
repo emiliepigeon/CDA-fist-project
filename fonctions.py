@@ -85,6 +85,39 @@ def juste_prix():
 
 ###########################################################################################################
 # Fonctionnalité 4 : Horloge numérique => menu.py choix 4
+import time  # Importation du module time pour accéder à l'heure système
+
+def horloge_numérique():
+    """Cette fonction affiche l'heure actuelle sous forme d'horloge numérique."""
+    
+    while True:  # Boucle pour permettre à l'utilisateur de rester dans l'horloge jusqu'à ce qu'il choisisse de quitter
+        # Obtenir l'heure actuelle
+        heure = time.localtime().tm_hour  # Récupère l'heure actuelle
+        minute = time.localtime().tm_min  # Récupère les minutes actuelles
+        seconde = time.localtime().tm_sec  # Récupère les secondes actuelles
+        
+        # Affiche l'heure au format numérique
+        print(f"{heure:02}:{minute:02}:{seconde:02}")  # Affiche l'heure, les minutes et les secondes avec un format à deux chiffres
+        
+        # Pause d'une seconde avant de mettre à jour l'affichage
+        time.sleep(1)  # Attend une seconde
+
+        # Pose la question à l'utilisateur
+        choix = input("Voulez-vous retourner au menu ? (o/n) : ").lower()  # Demande à l'utilisateur s'il veut retourner au menu
+        
+        # Vérifie si l'utilisateur a saisi 'o' ou 'n'
+        if choix == 'o':  # Si l'utilisateur veut retourner au menu
+            print("Retour au menu...")  # Message indiquant le retour au menu
+            break  # Quitte la boucle et termine la fonction
+        elif choix == 'n':  # Si l'utilisateur ne veut pas retourner au menu
+            print("Vous restez dans l'horloge.")  # Message indiquant que l'utilisateur reste dans l'horloge
+            continue  # Continue la boucle pour afficher l'heure encore une fois
+        else:
+            print("Choix invalide. Veuillez entrer 'o' pour oui ou 'n' pour non.")  # Gestion des entrées invalides
+
+
+
+###########################################################################################################
 
 ###########################################################################################################
 # Fonctionnalité 5 : Jeu du pendu => menu.py choix 5
