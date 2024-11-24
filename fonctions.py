@@ -218,11 +218,62 @@ def code_cesar():
 ###########################################################################################################
 # Fonctionnalité 7 : Gestionnaire de contacts => menu.py choix 7
 
-###########################################################################################################
-# Fonctionnalité 5 : Jeu du pendu => menu.py choix 5
 
 ###########################################################################################################
-# Fonctionnalité 6 : Code césar => menu.py choix 6
+# Fonctionnalité 8 : Baccalauréat / morpion / calculatrice simple => menu.py choix 8
+# CALCULATRICE SIMPLE
+def calculatrice():
+    """Cette fonction permet d'effectuer des calculs de base : addition, soustraction, multiplication et division."""
+    
+    while True:  # Boucle pour permettre à l'utilisateur de faire plusieurs calculs
+        # Affichage du menu des opérations
+        print("=== Menu de la Calculatrice ===")
+        print("1. Addition")
+        print("2. Soustraction")
+        print("3. Multiplication")
+        print("4. Division")
+        
+        # Demande à l'utilisateur de choisir une opération
+        choix = input("Choisissez une opération (1-4) le calcule sera à 2 nombres : ")
 
-###########################################################################################################
-# Fonctionnalité 8 : Baccalauréat => menu.py choix 8
+        # Vérifie que le choix est valide
+        if choix not in ['1', '2', '3', '4']:
+            print("Choix invalide. Veuillez entrer un nombre entre 1 et 4.")  # Message d'erreur
+            continue  # Redemande le choix
+
+        # Demande à l'utilisateur d'entrer les deux nombres pour le calcul
+        try:
+            nombre1 = float(input("Entrez le premier nombre : "))  # Premier nombre
+            nombre2 = float(input("Entrez le deuxième nombre : "))  # Deuxième nombre
+        except ValueError:
+            print("Veuillez entrer des nombres valides.")  # Gestion des erreurs si l'entrée n'est pas un nombre
+            continue  # Redemande les nombres
+
+        # Effectue le calcul en fonction du choix de l'utilisateur
+        if choix == '1':  # Addition
+            resultat = nombre1 + nombre2
+            operation = "addition"
+        elif choix == '2':  # Soustraction
+            resultat = nombre1 - nombre2
+            operation = "soustraction"
+        elif choix == '3':  # Multiplication
+            resultat = nombre1 * nombre2
+            operation = "multiplication"
+        elif choix == '4':  # Division
+            if nombre2 == 0:  # Vérifie si le dénominateur est zéro pour éviter la division par zéro
+                print("Erreur : Division par zéro n'est pas autorisée.")  # Message d'erreur
+                continue  # Redemande les nombres
+            resultat = nombre1 / nombre2
+            operation = "division"
+
+        # Affiche le résultat du calcul
+        print(f"Le résultat de la {operation} entre {nombre1} et {nombre2} est : {resultat}")
+
+        # Demande à l'utilisateur s'il veut faire un nouveau calcul
+        continuer = input("Voulez-vous faire un nouveau calcul ? (o/n) : ").lower()  # Convertit en minuscule
+        
+        if continuer != 'o':  # Si l'utilisateur ne veut pas continuer
+            print("Retour au menu...")  # Message indiquant qu'on retourne au menu
+            break  # Quitte la boucle
+
+

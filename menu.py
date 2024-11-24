@@ -1,6 +1,6 @@
 # menu.py
 
-from fonctions import calcul_remise, lance_des, juste_prix, horloge_numérique, trouve_mot, code_cesar  
+from fonctions import calcul_remise, lance_des, juste_prix, horloge_numérique, trouve_mot, code_cesar, calculatrice  
 # J'importe le fichier fonctions.py pour utiliser ses fonctions
 
 def afficher_menu():
@@ -16,7 +16,7 @@ def afficher_menu():
     print("5. Jeu du pendu") # Autre 
     print("6. Code césar") # Autre 
     print("7. Gestionnaire de contact") # Autre 
-    # print("8. Baccalauréat")
+    print("8. calculatrice")
     print("***************************************")
 
     return input("Faites votre choix : ")
@@ -49,6 +49,8 @@ while choix != "0":
             # J'appelle la fonction pour utiliser le code César
         # case "7":
             # Appel au gestionnaire de contacts
+        case "8":
+            calculatrice()
         case _:
             print("Option non valide. Veuillez choisir une option du menu.")  # Message d'erreur si le choix n'est pas valide
     
