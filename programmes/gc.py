@@ -10,17 +10,18 @@ class GestionnaireContacts:
         contacts = {}
         
         # Je commence une boucle infinie pour permettre à l'utilisateur de gérer les contacts.
-        while True:
+        while True: # TODO: changer le true et mettre un condition tant que != du choix 6 rester dans la boucle.
             # J'affiche le menu des options disponibles pour le gestionnaire de contacts.
             print("\n=== Gestionnaire de Contacts ===")
             print("1. Ajouter un contact")  # Option pour ajouter un nouveau contact.
             print("2. Afficher tous les contacts")  # Option pour afficher tous les contacts enregistrés.
-            print("3. Quitter")  # Option pour quitter le gestionnaire.
-
+            print("3. Quitter")  # Option pour quitter le gestionnaire.# TODO: après ajout des autes options deviendra 6.
+            
+            
             # Je demande à l'utilisateur de choisir une option parmi celles proposées.
             choix = input("Choisissez une option (1-3) : ")
 
-            # Si l'utilisateur choisit d'ajouter un contact (option 1).
+            # Si l'utilisateur choisit d'ajouter un contact (option 1) = creat.
             if choix == '1':
                 # Je demande à l'utilisateur d'entrer le nom du contact.
                 nom = input("Entrez le nom du contact : ")
@@ -35,7 +36,7 @@ class GestionnaireContacts:
                 # J'affiche un message confirmant que le contact a été ajouté avec succès.
                 print(f"Contact '{nom}' ajouté avec succès.")
             
-            # Si l'utilisateur choisit d'afficher tous les contacts (option 2).
+            # Si l'utilisateur choisit d'afficher tous les contacts (option 2) = liste de contacts.
             elif choix == '2':
                 # Je vérifie si le dictionnaire de contacts est vide.
                 if not contacts:
@@ -48,10 +49,16 @@ class GestionnaireContacts:
                         print(f"Nom : {nom}, Téléphone : {tel}, Email : {email}")
                         print("--------------------")  # Ligne de séparation entre les contacts.
 
-            # Si l'utilisateur choisit de quitter (option 3).
+            # TODO:# elsif choix == '3': Rechercher un contact = search
+            # TODO:# elsif choix == '4': Modifier le contact = update
+            # TODO:# elsif choix == '6': Suprimer le contact = delete
+
+            # Si l'utilisateur choisit de quitter (option 3) sera à modifier lorsque j'aurai rajouter le sautres options deviendra option 6.
             elif choix == '3':
                 break  # Je sors de la boucle et termine la méthode.
 
             # Si l'utilisateur entre une option invalide.
             else:
                 print("Choix invalide.")  # Message d'erreur pour un choix non reconnu.
+
+# TODO: Faire que le menu de début s'affiche à la fin du jeu avec la question "voulez vousretourner au menu (o/n)?"

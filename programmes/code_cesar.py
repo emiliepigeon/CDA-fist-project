@@ -32,3 +32,5 @@ class CodeCesar:
         
         # J'affiche le résultat final, c'est-à-dire le mot codé.
         print(f"Le mot codé est : {mot_code}")
+
+# TODO: Faire que le menu de début s'affiche à la fin du jeu avec la question "voulez vousretourner au menu (o/n)?"

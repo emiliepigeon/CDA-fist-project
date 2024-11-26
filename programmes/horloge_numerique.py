@@ -16,5 +16,6 @@ class HorlogeNumerique:
             print(f"{heure:02}:{minute:02}:{seconde:02}", end="\r")  
             time.sleep(1)  
             
-            if input("\nVoulez-vous retourner au menu ? (o/n) : ").lower() != 'o':
+            if input("\nVoulez-vous retourner au menu ? (o/n) : ").lower() != 'n':
                 break  
+# TODO: Faire que le menu de début s'affiche si o à la question "voulez vousretourner au menu (o/n)?"

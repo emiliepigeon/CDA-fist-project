@@ -35,3 +35,5 @@ class JustePrix:
         
         # Si l'utilisateur n'a pas trouvé le prix après ses essais, je lui indique qu'il a perdu.
         print(f"Vous avez perdu ! Le juste prix était : {prix}")  
+
+# TODO: Faire que le menu de début s'affiche à la fin du jeu avec la question "voulez vousretourner au menu (o/n)?"

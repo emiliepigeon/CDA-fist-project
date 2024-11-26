@@ -1,6 +1,6 @@
 # programmes/trouve_mot.py
 
-import random  # J'importe le module random pour choisir un mot aléatoire.
+import random  # J'importe le module random pour choisir un mot aléatoire de mon dictionnaire.
 
 class TrouveMot:
     """Classe pour jouer au jeu du pendu."""
@@ -13,11 +13,11 @@ class TrouveMot:
         
         # Je choisis un mot aléatoire dans la liste des mots.
         mot_a_trouver = random.choice(mots)
-        
+        # TODO: annoncer le nombre de lettres du mot à trouver
         # Je crée une liste de lettres trouvées, initialisée avec des underscores (_).
         lettres_trouvees = ["_"] * len(mot_a_trouver)
         
-        # Je fixe le nombre d'essais restants à 5.
+        # Je fixe le nombre d'essais restants à 5 en cas d'erreur de lettre.
         essais_restants = 5
         
         # Je commence une boucle qui continue tant qu'il reste des essais.
@@ -47,3 +47,5 @@ class TrouveMot:
             # Si l'utilisateur n'a plus d'essais restants, j'affiche un message de perte.
             if essais_restants == 0:
                 print(f"Vous avez perdu ! Le mot était : {mot_a_trouver}")  
+
+# TODO: Faire que le menu de début s'affiche à la fin du jeu avec la question "voulez vousretourner au menu (o/n)?"
